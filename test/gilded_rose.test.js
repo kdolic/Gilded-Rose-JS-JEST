@@ -32,4 +32,13 @@ describe("Gilded Rose", function() {
       expect(items[0].quality).toBe(1);
     });
   });
+
+  describe("Sulfurus (Legendary Item)", function() {
+    it("never has to be sold or decreases in Quality", function() {
+      const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", 0, 80)]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].sellIn).toBe(0);
+      expect(items[0].quality).toBe(80);
+    });
+  });
 });
