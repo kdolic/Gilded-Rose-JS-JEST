@@ -15,12 +15,21 @@ describe("Gilded Rose", function() {
       expect(items[0].sellIn).toBe(9);
       expect(items[0].quality).toBe(0);
     });
-    
+
     it("Quality of item is never more than 50", function() {
       const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)]);
       const items = gildedRose.updateQuality();
       expect(items[0].sellIn).toBe(4);
       expect(items[0].quality).toBe(50);
+    });
+  });
+
+  describe("Aged Brie", function() {
+    it("increases in Quality the older it gets", function() {
+      const gildedRose = new Shop([new Item("Aged Brie", 20, 0)]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].sellIn).toBe(19);
+      expect(items[0].quality).toBe(1);
     });
   });
 });
