@@ -38,6 +38,12 @@ https://trello.com/b/p5gfiafg/gilded-rose-kata
 
 ## Screenshots
 
+### Refactoring - Before
+
+![before](https://user-images.githubusercontent.com/36944457/121542003-5d8e0800-c9cd-11eb-9ab0-85457adb78e2.PNG)
+
+### Refactoring - After
+
 #### gilded_rose.test.js
 
 ![test1](https://user-images.githubusercontent.com/36944457/121454995-5fbe7b00-c969-11eb-9c8a-7069fe0c14ff.PNG)
