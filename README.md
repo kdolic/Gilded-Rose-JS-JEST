@@ -16,7 +16,7 @@ https://github.com/kdolic/GildedRose-Refactoring-Kata
 ## Trello Board
 
 Created Trello Board to document user stories, process/task breakdown:
-https://trello.com/c/mvITGf3t/8-readmemd
+https://trello.com/b/p5gfiafg/gilded-rose-kata
 
 ## File/Function Structure
 
