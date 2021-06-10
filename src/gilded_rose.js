@@ -19,21 +19,7 @@ class Shop {
           }
         }
       } else {
-        if (this.items[i].quality < 50) {
-          this.items[i].quality = this.items[i].quality + 1;
-          if (this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert') {
-            if (this.items[i].sellIn < 11) {
-              if (this.items[i].quality < 50) {
-                this.items[i].quality = this.items[i].quality + 1;
-              }
-            }
-            if (this.items[i].sellIn < 6) {
-              if (this.items[i].quality < 50) {
-                this.items[i].quality = this.items[i].quality + 1;
-              }
-            }
-          }
-        }
+        
       }
       if (this.items[i].sellIn < 0) {
         if (this.items[i].name != 'Aged Brie') {
@@ -78,6 +64,25 @@ class Shop {
     // Otherwise empty or undefined
     : null;
  }
+
+ // Add 1 to the quality of an item if:
+ qualityIncrease(i) {
+  //  If quality of item is less than 50
+  if (this.items[i].quality < 50) {
+    // Add 1 to quality
+    this.items[i].quality = this.items[i].quality + 1;
+    // If the item is 'Backstage passes' AND the sellIn day value is 10 or less AND quality is less than 50
+    if (this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert' && this.items[i].sellIn < 11 && this.items[i].quality < 50) {
+          // Add 1 to the quality of item
+          this.items[i].quality = this.items[i].quality + 1;
+      }
+      // If the sellIn day value is 5 or less AND quality is less than 50
+      if (this.items[i].sellIn < 6 && this.items[i].quality < 50) {
+        // Add 1 to quality
+          this.items[i].quality = this.items[i].quality + 1;
+        }
+      }
+    }
 }
 
 module.exports = {
