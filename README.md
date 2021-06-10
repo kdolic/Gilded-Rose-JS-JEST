@@ -38,6 +38,8 @@ https://trello.com/c/mvITGf3t/8-readmemd
 
 ## Screenshots
 
+![alt tag](https://ibb.co/p45zQXD)
+
 ## Getting started
 
 Install dependencies
