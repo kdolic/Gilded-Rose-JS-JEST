@@ -10,32 +10,26 @@ class Shop {
   constructor(items=[]){
     this.items = items;
   }
+  
   updateQuality() {
+    // Loop through the array of items in the shop
     for (let i = 0; i < this.items.length; i++) {
-      if (this.items[i].name != 'Aged Brie' && this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
-        if (this.items[i].quality > 0) {
-          if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
-            this.items[i].quality = this.items[i].quality - 1;
-          }
-        }
-      } else {
-        
-      }
-      if (this.items[i].sellIn < 0) {
-        if (this.items[i].name != 'Aged Brie') {
-          if (this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
-          
-          } else {
-            this.items[i].quality = this.items[i].quality - this.items[i].quality;
-          }
-        } else {
-          if (this.items[i].quality < 50) {
-            this.items[i].quality = this.items[i].quality + 1;
-          }
-        }
-      }
+      // If item is not 'Aged Brie' or 'Backstage passes'
+      this.items[i].name != 'Aged Brie' && this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert'
+      // Run qualityDecrease function
+      ? this.qualityDecrease(i)
+      // If item is 'Aged Brie' or 'Backstage passes' --> Run qualityIncrease function
+      : this.qualityIncrease(i)
+      // sellIn will always be decrease unless the name is 'Sulfuras, Hand of Ragnaros' --> Run sellInDecrease function
+      this.sellInDecrease(i);
+      // If sellIn is less than 0
+      this.items[i].sellIn < 0 
+      // Run sellInExpiredQualityUpdate function
+      ? this.sellInExpiredQualityUpdate(i) 
+      // Otherwise empty or undefined
+      : null
     }
-
+    // Return the array of items in the shop
     return this.items;
   }
 
@@ -66,7 +60,7 @@ class Shop {
  }
 
  // Add 1 to the quality of an item if:
- qualityIncrease(i) {
+  qualityIncrease(i) {
   //  If quality of item is less than 50
   if (this.items[i].quality < 50) {
     // Add 1 to quality
@@ -83,6 +77,26 @@ class Shop {
         }
       }
     }
+  
+  sellInExpiredQualityUpdate(i) {
+    // If item is not 'Aged Brie'
+    if (this.items[i].name != 'Aged Brie') {
+        // If item has a quality greater than 0 AND item is not 'Sulfuras, Hand of Ragnaros' AND item is not 'Backstage passes'
+        if (this.items[i].quality > 0 && this.items[i].name != 'Sulfuras, Hand of Ragnaros' && this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
+            // Subtract 1 from quality
+            this.items[i].quality = this.items[i].quality - 1;
+        } else {
+        // Holds quality from going negative or below 0
+        this.items[i].quality = this.items[i].quality - this.items[i].quality;
+      }
+    } else {
+      // For 'Aged Brie' and 'Backstage passes,' quality increased until it gets to 50
+      if (this.items[i].quality < 50) {
+        // Add 1 to quality
+        this.items[i].quality = this.items[i].quality + 1;
+      }
+    }
+  }
 }
 
 module.exports = {
