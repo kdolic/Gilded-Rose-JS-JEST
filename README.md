@@ -38,8 +38,15 @@ https://trello.com/c/mvITGf3t/8-readmemd
 
 ## Screenshots
 
-![alt tag](https://ibb.co/p45zQXD)
-![alt tag](https://ibb.co/BszKNwm)
+![test1](https://user-images.githubusercontent.com/36944457/121454995-5fbe7b00-c969-11eb-9c8a-7069fe0c14ff.PNG)
+
+![test2](https://user-images.githubusercontent.com/36944457/121455141-97c5be00-c969-11eb-8380-41ee4aa08d2d.PNG)
+
+![refactor1](https://user-images.githubusercontent.com/36944457/121455164-a01df900-c969-11eb-95d4-917679183d0d.PNG)
+
+![refactor2](https://user-images.githubusercontent.com/36944457/121455176-a44a1680-c969-11eb-80b1-665a1103debd.PNG)
+
+![result1](https://user-images.githubusercontent.com/36944457/121455187-a9a76100-c969-11eb-834e-656419466416.PNG)
 
 ## Getting started
 
